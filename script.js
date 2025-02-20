@@ -141,23 +141,23 @@ console.log(`Maior força: ${encontrarMelhor("forca").codinome}`);
 console.log(`Maior velocidade: ${encontrarMelhor("velocidade").codinome}`);
 console.log(`Maior resistência: ${encontrarMelhor("resistencia").codinome}`);
 
-function encontrarMaisForte() {
-    let maisForte = personagens[0];
+function encontrarVencedor() {
+    let campeao = personagens[0];
     for (let i = 1; i < personagens.length; i++) {
         let poderTotal = personagens[i].forca + personagens[i].velocidade + personagens[i].resistencia;
-        let poderMaisForte = maisForte.forca + maisForte.velocidade + maisForte.resistencia;
+        let poderMaisForte = campeao.forca + campeao.velocidade + campeao.resistencia;
         if (poderTotal > poderMaisForte) {
-            maisForte = personagens[i];
+            campeao = personagens[i];
         }
     }
-    return maisForte;
+    return campeao;
 }
 
-const vencedor = encontrarMaisForte();
+const vencedor = encontrarVencedor();
 
 function calcularPontos(personagem) {
     return personagem.forca + personagem.velocidade + personagem.resistencia;
 }
 
-console.log(`O personagem vencedor é: ${encontrarMaisForte().codinome}, com ${calcularPontos(vencedor)} pontos.`);
+console.log(`O personagem vencedor é: ${encontrarVencedor().codinome}, com ${calcularPontos(vencedor)} pontos.`);
 
